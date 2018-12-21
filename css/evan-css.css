@@ -1,0 +1,288 @@
+* {
+    margin: 0;
+}
+
+*:not([class*="icon"]):not(i) { /*解决字体图标不显示的问题*/
+    font-family: "Microsoft YaHei UI" !important;
+}
+
+*::selection {
+    background: #ffd57f;
+    /*color: #211821;*/
+}
+
+a {
+    text-decoration: none;
+}
+
+div {
+    display: block;
+}
+
+header {
+    width: 100%;
+    height: 50px;
+    background-color: #333333;
+}
+
+nav {
+    width: 100%;
+    height: 50px;
+    background-color: #FAFAFA;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+h1 {
+    font-size: 120px;
+    color: #ffd57f;
+}
+
+h2 {
+    font-weight: lighter;
+    color: #FFFFFF;
+    margin-top: 10%;
+}
+
+li {
+    display: inline-block;
+    margin: 15px 0; /*导航栏垂直居中*/
+}
+
+footer {
+    width: 100%;
+    height: 150px;
+    background-color: #FFFFFF;
+}
+
+.icon-index-down {
+    position: absolute;
+    bottom: 50px;
+    font-size: 5rem;
+    color: #9999cc;
+    animation-name: index-down;
+    animation-duration: 5s; /*设置动画持续时间*/
+    animation-delay: 0ms; /*设置动画开始时间*/
+    animation-iteration-count: infinite; /*设置动画循环次数*/
+}
+
+/*设置首页icon动画*/
+@keyframes index-down {
+    0% {
+        transform: translate3d(0, -50%, 0);
+        opacity: 0;
+    }
+    20% {
+        transform: none;
+        opacity: 1;
+    }
+    100% {
+    }
+}
+
+.background-img {
+    position: absolute;
+    display: table;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background: center center;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.evan-img {
+    margin: 0 20px 0 30px;
+    height: 50px;
+    width: 30px;
+    float: left;
+}
+
+.name {
+    width: auto;
+    height: 50px;
+    float: left;
+}
+
+.clear {
+    clear: both;
+}
+
+.nav-table-links li span {
+    cursor: pointer;
+}
+
+.nav-table-links {
+    padding: 0;
+    text-align: center;
+    font-weight: 500;
+}
+
+#nav-table-link {
+    color: #999; /*设置未选中的标签颜色*/
+}
+
+.nav-table-links-select {
+    color: #444; /*设置选中的标签的颜色*/
+}
+
+.nav-table-links li:not([class='nav-table-links-select']) span:hover {
+    color: #ccc; /*设置鼠标放到标签上的颜色*/
+}
+
+.nav-table-list {
+    margin-right: 20px; /*设置每个标签之间的间隔*/
+}
+
+.works {
+    width: auto;
+    height: auto;
+    padding: 30px 30px 40px 30px;
+    background: #f4f4f4;
+}
+
+.container {
+    width: auto;
+    text-align: center;
+    padding: 0 15px 0 15px;
+    margin: 0 auto;
+    max-width: 2700px;
+}
+
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+    max-width: 2700px;
+}
+
+.img-responsive {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.gap {
+    margin: 0 15px 30px 15px;
+}
+
+.img-frame-shadow {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07);
+}
+
+.img-frame {
+    padding: 10px;
+    background-color: #ffffff;
+}
+
+.img-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+/*设置图片遮罩*/
+.img-cover {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    z-index: 1000;
+    background: #fff;
+    opacity: 0;
+    transition: opacity .25s ease-in-out, background .25s ease-in-out;
+    -moz-transition: opacity .25s ease-in-out, background .25s ease-in-out;
+    -webkit-transition: opacity .25s ease-in-out, background .25s ease-in-out;
+    text-align: left;
+}
+
+/*设置鼠标移入出现图片遮罩*/
+.img-cover:hover {
+    opacity: 0.85;
+}
+.img-title {
+    margin: 5px 0 0px 5px;
+    font-size: 16px;
+    color: #444;
+}
+.img-description {
+    margin: 10px 0 0 5px;
+    font-size: 14px;
+    color: #777;
+}
+
+/*让作品容器高度随图片列表高度变化*/
+.fix {
+    *zoom: 1;
+}
+.fix:after {
+    display: block;
+    content: "clear";
+    height: 0;
+    clear: both;
+    overflow: hidden;
+    visibility: hidden;
+}
+
+/*这里是弹窗*/
+.pop-up-bg {
+    /*filter: alpha(opacity=85);
+    -moz-opacity: 0.85;*/
+    opacity: 0.5;
+    position: absolute;
+    z-index: 5000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+}
+.pop-up {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    z-index: 5001;
+    width: 80%;
+    height: 500px;
+    margin: 0;
+    background-color: #fff;
+    text-align: center;
+}
+
+/*响应式图片展示*/
+@media (min-width: 2280px) {
+    .col-xxl-6 {
+        float: left;
+        width: calc(16.6666% - 30px);
+    }
+}
+@media (max-width: 2279px) {
+    .col-xl-5 {
+        float: left;
+        width: calc(20% - 30px);
+    }
+}
+@media (max-width: 1909px) {
+    .col-l-4 {
+        float: left;
+        width: calc(25% - 30px);
+    }
+}
+@media (max-width: 1539px) {
+    .col-m-3 {
+        float: left;
+        width: calc(33.3333% - 30px);
+    }
+}
+@media (max-width: 1169px) {
+    .col-s-2 {
+        float: left;
+        width: calc(50% - 30px);
+    }
+}
+@media (max-width: 767px) {
+    .col-xs-1 {
+        float: left;
+        width: calc(100% - 30px);
+    }
+}
